@@ -1,0 +1,40 @@
+﻿@model IEnumerable<UniversitymanagementUsingEntityFramework.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmementCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmementCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Departmentid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Departmentid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Departmentid })
+        </td>
+    </tr>
+}
+
+</table>
